@@ -11,8 +11,9 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'dashboard',
-      component: ECommerceComponent,
+      path: 'campaign',
+      loadChildren: () => import('./campaign/campaign.module')
+        .then(m => m.CampaignModule),
     },
     {
       path: 'iot-dashboard',
